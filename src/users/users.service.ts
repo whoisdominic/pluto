@@ -6,18 +6,39 @@ import { User } from './entities/user.entinty';
 @Injectable()
 export class UsersService {
   private users: User[] = [
-    { id: 0, name: 'Dominic' },
-    { id: 1, name: 'Luke' },
-    { id: 2, name: 'Dominic' },
+    {
+      id: '0',
+      username: 'dominic',
+      firstName: 'dominic',
+      lastName: 'cobb',
+      phoneNumber: '2064896538',
+      password: 'z0jIelanffkx',
+    },
+    {
+      id: '1',
+      username: 'yumna',
+      firstName: 'yumna',
+      lastName: 'cobb',
+      phoneNumber: '5555555555',
+      password: 'z0jIelanafkx',
+    },
+    {
+      id: '2',
+      username: 'ahmed',
+      firstName: 'ahmed',
+      lastName: 'cobb',
+      phoneNumber: '2064895555',
+      password: 'z0jIelanfkdx',
+    },
   ];
 
-  findAll(name?: string): User[] {
-    if (name) {
-      return this.users.filter((user) => user.name === name);
+  findAll(username?: string): User[] {
+    if (username) {
+      return this.users.filter((user) => user.username === username);
     }
     return this.users;
   }
-  findById(userId: number): User {
+  findById(userId: string): User {
     return this.users.find((user) => user.id === userId);
   }
 

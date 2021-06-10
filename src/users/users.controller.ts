@@ -4,7 +4,6 @@ import {
   Get,
   NotFoundException,
   Param,
-  ParseIntPipe,
   Post,
   Query,
 } from '@nestjs/common';
@@ -35,7 +34,7 @@ export class UsersController {
   }
   // Get user by id
   @Get(':id')
-  getUsersById(@Param('id', ParseIntPipe) id: number): User {
+  getUsersById(@Param('id') id: string): User {
     const user = this.usersService.findById(id);
 
     if (!user) throw new NotFoundException();
