@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Service is online"', () => {
-      expect(appController.getHello()).toBe('Service is online');
+      expect(appController.getHealthCheck()).toBe('Service is online');
     });
   });
 });
